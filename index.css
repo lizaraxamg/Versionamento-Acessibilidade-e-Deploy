@@ -1,0 +1,70 @@
+/* Definição das variáveis de cor (Será útil para o Modo Escuro depois!) */
+:root {
+    --cor-fundo-principal: #f4f4f4; /* Cinza claro */
+    --cor-texto-principal: #1a1a1a; /* Quase preto (Alto contraste - passa o 4.5:1) */
+    --cor-acento: #007bff;         /* Azul padrão para links/botões */
+    --cor-card-fundo: #ffffff;     /* Branco puro para o card */
+    --cor-borda: #ccc;
+    
+    /* Configuração de acessibilidade para o foco do teclado (Muito importante!) */
+    --cor-foco: #ffc107; /* Amarelo brilhante e visível */
+}
+
+/* Base: Garante alto contraste em todo o corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal); /* OBRIGATÓRIO: Garante o contraste de 4.5:1 */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo do Card de Perfil */
+.perfil-card {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--cor-card-fundo);
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.perfil-foto {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 150px;
+}
+
+/* * ESTILO CRÍTICO PARA ACESSIBILIDADE WCAG (Navegação por Teclado)
+ * Define um contorno forte e visível para elementos interativos quando focados. 
+ */
+button, a, [tabindex]:focus, input:focus {
+    outline: 3px solid var(--cor-foco); /* Contorno amarelo visível */
+    outline-offset: 2px;
+}
+
+/* Estilo do Botão */
+button {
+    background-color: var(--cor-acento);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
